@@ -1,0 +1,64 @@
+<div id="signIn--modal" class="modal">
+  <form action="/users/" method="POST">
+    <div class="modal--box">
+      <span class="close" onclick="closeModal('signIn--modal')">&times;</span>
+      <div class="sign--info">
+        <span class="logIn--txt">Log In</span><br><br>
+        <span class="sign--input"><i class="fas fa-user"></i></span>
+        <input type="text" name="username" class="signIn--input" value="" placeholder="Username">
+      </div>
+      <div class="sign--info">
+        <span class="sign--input"><i class="fas fa-unlock"></i></span>
+        <input type="password" name="password" class="signIn--input" value="" placeholder="Password">
+      </div>
+      <div class="sign--info">
+        <input type="submit" value="Log In" class="save--btn" placeholder="Log In">
+      </div>
+    </div>
+  </form>
+</div>
+<div id="register--modal" class="modal">
+  <form action="/" method="POST">
+    <div class="modal--box">
+      <span class="close" onclick="closeModal('register--modal')">&times;</span>
+      <div class="sign--info">
+
+        <span>Create New Account</span>
+
+        <div class="sign--info">
+          <i class="fas fa-user"></i>
+          <input type="text" name="username" class="signIn--input" value="" placeholder="Username*">
+        </div>
+
+
+        <div id="sign--modal" class="sign--info">
+          <i class="fas fa-envelope"></i>
+          <input type="text" name="email" class="signIn--input" value="" placeholder="Email*">
+        </div>
+
+        <div class="sign--info">
+          <i class="fas fa-mobile-alt"></i>
+          <input type="text" name="phone" class="signIn--input" value="" placeholder="Phone Number*">
+        </div>
+
+        <div class="sign--info">
+          <i class="fas fa-unlock"></i>
+          <input type="password" name="password" class="signIn--input" value="" placeholder="Password*">
+        </div>
+
+        <div class="sign--info">
+          <input type="submit" class="save--btn" value="Sign Up">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'inline-block';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>

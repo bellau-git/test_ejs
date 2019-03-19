@@ -1,0 +1,30 @@
+<div style="text-align: center; line-height: 60px; color: <%= statusColor %>"><%= error %><%= success %></div>
+
+<% if(error === '') { %>
+<table id="userList" >
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+  </tr>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</table>
+<script>
+  fetch('http://localhost:8000/getUsers')
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (list) {
+      list.forEach(user => {
+        let listItem = document.createElement("th");
+        listItem.innerHTML = `${user.username} | ${user.email} | ${user.phone}`;
+        document.getElementById("userList").appendChild(listItem);
+      });
+    });
+</script>
+<% } %>
+

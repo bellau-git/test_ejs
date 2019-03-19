@@ -1,0 +1,8 @@
+<% include ./header.ejs %>
+<% if(page === 'home'){ %>
+  <% include ./pages/home.ejs %>
+  <% include ./modals.ejs %>
+<% } %>
+<% if(page === 'users'){ %><% include ./pages/users.ejs %><% } %>
+<% if(page === 'list'){ %><% include ./pages/list.ejs %><% } %>
+<% include ./footer.ejs %>

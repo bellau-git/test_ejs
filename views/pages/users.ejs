@@ -1,0 +1,17 @@
+<div style="text-align: center; line-height: 60px; color: <%= statusColor %>"><%= error %><%= success %></div>
+
+<% if(error === '') { %>
+<ol id="userList"></ol>
+<script>
+  fetch('http://localhost:8000/getUsers')
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (list) {
+      list.forEach(user => {
+        let listItem = document.createElement("li");
+        document.getElementById("userList").appendChild(listItem);
+      });
+    });
+</script>
+<% } %>
